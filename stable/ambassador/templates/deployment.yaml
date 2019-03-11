@@ -105,6 +105,10 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
               {{- end -}}
+            {{- if .Values.namespace.single }}
+            - name: AMBASSADOR_SINGLE_NAMESPACE
+              value: {{ .Values.namespace.single | quote }}
+            {{- end -}}
             {{- if .Values.env }}
             {{- range $key,$value := .Values.env }}
             - name: {{ $key | upper | quote}}

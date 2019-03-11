@@ -55,7 +55,8 @@ The following tables lists the configurable parameters of the Ambassador chart a
 | `image.repository`                 | Image                                                                           | `quay.io/datawire/ambassador` |
 | `image.tag`                        | Image tag                                                                       | `0.50.3`                      |
 | `imagePullSecrets`                 | Image pull secrets                                                              | `[]`                          |
-| `namespace.name`                   | Set the `AMBASSADOR_NAMESPACE` environment variable                             | `metadata.namespace`          |
+| `namespace.name`                   | Set the `AMBASSADOR_NAMESPACE` env var and deploy ambassador to that ns         | `metadata.namespace`          |
+| `namespace.single`                 | Set the `AMBASSADOR_SINGLE_NAMESPACE` env var and only operate in that ns       | `false`                       |
 | `podAnnotations`                   | Additional annotations for ambassador pods                                      | `{}`                          |
 | `prometheusExporter.enabled`       | Prometheus exporter side-car enabled                                            | `false`                       |
 | `prometheusExporter.pullPolicy`    | Image pull policy                                                               | `IfNotPresent`                |
